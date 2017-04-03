@@ -1,0 +1,47 @@
+@model IEnumerable<ZenithWebsite.Models.UserRolesViewModel.UserRolesViewModel>
+
+@{
+    ViewData["Title"] = "User Roles";
+}
+
+<h2>User Roles</h2>
+<br /><br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @foreach (var role in item.Roles)
+                    {
+                        <p>@role</p>
+                    }
+                </td>
+                <td>
+                    <a asp-action="AddRole" asp-route-id="@item.Username">Add Role</a> |
+                    <a asp-action="DeleteRole" asp-route-id="@item.Username">Remove Role</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

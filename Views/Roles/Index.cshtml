@@ -1,0 +1,36 @@
+@model IEnumerable<ZenithWebsite.Models.RoleViewModels.IdentityRoleViewModel>
+
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<h2>Roles</h2>
+<br>
+<p class="create">
+    <a asp-action="Create">Add Role</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NormalizedName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NormalizedName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RoleId">Edit Role</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RoleId">Delete Role</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

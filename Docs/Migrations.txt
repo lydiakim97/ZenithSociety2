@@ -1,0 +1,4 @@
+dotnet restore
+dotnet ef migrations add FirstMigrations
+dotnet ef datatase update
+dotnet run

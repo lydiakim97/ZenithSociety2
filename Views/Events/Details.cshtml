@@ -1,0 +1,53 @@
+@model ZenithWebsite.Models.Event
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Event Details</h2>
+<br />
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EnteredBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EnteredBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EventFrom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventFrom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EventTo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EventTo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivityId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Activity.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EventId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

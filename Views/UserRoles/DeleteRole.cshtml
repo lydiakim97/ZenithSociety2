@@ -1,0 +1,44 @@
+@model ZenithWebsite.Models.UserRolesViewModel.AddUserRoleViewModel
+
+@{
+    ViewData["Title"] = "Delete Role";
+}
+
+<h2>Delete Role</h2>
+<br />
+<form asp-action="DeleteRole">
+    <div class="form-horizontal">
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Username" />
+
+        <div class="form-group">
+            <label asp-for="Username" class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <input asp-for="Username" class="form-control" disabled>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SelectedRole" class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <select asp-for="SelectedRole" class="form-control" asp-items="ViewBag.AllRoles"></select>
+                <span asp-validation-for="SelectedRole" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Remove" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,38 @@
+@model ZenithWebsite.Models.RoleViewModels.IdentityRoleViewModel
+
+@{
+    ViewData["Title"] = "Role Details";
+}
+
+<h2>Role Details</h2>
+<br />
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RoleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NormalizedName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NormalizedName)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RoleId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

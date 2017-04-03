@@ -1,0 +1,130 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: rgba(217, 137, 137, 0.12);
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* buttons and links extension to use brackets: [ click me ] */
+.btn-bracketed::before {
+    display:inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+.btn-bracketed::after {
+    display:inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"]
+{
+    width: 100%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none
+  }
+}
+
+/* navbar */
+/* Changes the background color of the header*/
+.navbar {
+    background-color: #8b7d7b;
+}
+
+/* Changes the header title*/
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+/* Changes the header menu*/
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff;
+  font-size: 14.5px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #d8ee77;
+  background-color: transparent;
+}
+
+/* change color of the links */
+a {
+    color: #023ba0;
+}
+
+a:hover {
+    color: #a00262;
+}
+
+/* table */
+th {
+    text-align: center;
+    background-color: rgba(181, 200, 204, 0.8);
+    height: 35px;
+}
+
+td {
+    height: 34px;
+}
+
+table, th, td {
+    border: 2px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(181, 200, 204, 0.2);
+}
+
+/* title */
+h2 {
+    margin-top: 30px;
+    text-align: center;
+    color:rgb(79, 55, 32);
+}
+
+/* date picker */
+.input-group-addon {
+    border-style: none;
+    background-color: rgba(217, 137, 137, 0);
+}
+
+.input-group {
+    padding-right: 625px;
+}
+
+.control-label {
+    width: 130px;
+}
+
+/* homepage images */
+.background {
+   margin: 0 auto;
+   display: block;
+   width: 70%
+}

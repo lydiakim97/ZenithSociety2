@@ -1,0 +1,83 @@
+@model ZenithWebsite.Models.Event
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<link href="~/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+<h2>Create Event</h2>
+<br />
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ActivityId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="ActivityId" class ="form-control" asp-items="ViewBag.ActivityId"></select>
+                <span asp-validation-for="ActivityId" class="text-danger" />
+            </div>
+        </div>
+
+        @Html.Hidden("CreationDate", DateTime.Now)
+
+        <div class="form-group">
+            <label asp-for="EventFrom" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input asp-for="EventFrom" class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <span asp-validation-for="EventFrom" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EventTo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <div class='input-group date' id='datetimepicker2'>
+                    <input asp-for="EventTo" class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <span asp-validation-for="EventTo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsActive" />
+                    <label asp-for="IsActive"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script src="~/lib/moment/min/moment.min.js"></script>
+<script src="~/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+    $(function () {
+        $('#datetimepicker2').datetimepicker();
+    });
+</script>
+}
